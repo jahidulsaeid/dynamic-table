@@ -18,8 +18,8 @@ function App() {
 
       {selectTable === true && (
         <div className='select-table'>
-          {Array(5)
-            .fill(Array(5).fill(0)) // 5x5 0 array
+          {Array(10)
+            .fill(Array(10).fill(0)) // 5x5 0 array
             .map((e, i) => (
               <div className="row-node" key={i}>
                 {e.map((e2, i2) => (
@@ -42,10 +42,10 @@ function App() {
         </div>
       )}
 
-
       <div className="container mt-5">
-        <ViewTable row={5} col={4}/>
+        <ViewTable row={currentNode[0] + 1} col={currentNode[1] + 1} />
       </div>
+
     </>
   )
 }
