@@ -22,7 +22,7 @@ function App() {
       </button>
 
       {selectTable === true && (
-        <div className='select-table'>
+        <div className='select-table' onClick={() => setSelectTable(false)}>
           {Array(10)
             .fill(Array(10).fill(0)) // 5x5 0 array
             .map((e, i) => (
