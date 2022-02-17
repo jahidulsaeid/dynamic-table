@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Draggable from 'react-draggable';
 import './App.css'
 
 import Table from './components/icons/Table';
@@ -8,11 +9,15 @@ function App() {
   const [selectTable, setSelectTable] = useState(false)
   const [nodeHover, setNodeHover] = useState([0, 0]);
   const [currentNode, setCurrentNode] = useState([0, 0]);
+  const [flag, setFlag] = useState(false)
 
-
+  const tableIconHandle = () => {
+    setFlag(true)
+    setSelectTable(!selectTable)
+  }
   return (
     <>
-      <button className="table-icon-btn" onClick={() => setSelectTable(!selectTable)}>
+      <button className="table-icon-btn" onClick={tableIconHandle}>
         <Table />
       </button>
 
@@ -41,9 +46,14 @@ function App() {
             ))}
         </div>
       )}
+      <div onClick={() => setSelectTable(false)}>
+        <Draggable>
 
-      <div className="container mt-5">
-        <ViewTable row={currentNode[0] + 1} col={currentNode[1] + 1} />
+          <div className="container mt-5" >
+            <ViewTable row={currentNode[0] + 1} col={currentNode[1] + 1} flag={flag} />
+          </div>
+
+        </Draggable>
       </div>
 
     </>
