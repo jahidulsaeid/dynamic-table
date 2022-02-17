@@ -1,0 +1,28 @@
+.table-icon-btn {
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: none;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+/* .table-icon-btn svg {
+  width: 24px;
+} */
+
+.row-node {
+  height: 16px;
+}
+
+.single-node {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 1px;
+}
+
+.select-table {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
